@@ -1,0 +1,47 @@
+<project name="ADV" default="all" >
+  <description>
+    simple example build file
+  </description>
+  <path id = "classpath">
+  <fileset dir = "lib"> <include name = "**/*.jar"/> </fileset>
+  </path>
+  <!-- set global properties for this build -->
+  
+ 
+
+  <target name = "echo" description = "my first buid">
+    <echo> Ant in action </echo>
+  </target>
+  
+   <target name = "echo2" description = "my second buid" depends = "echo">
+    <echo> Ant in action  (target 2) </echo>
+  </target>
+  <target name =" create dir" description="my third buid" depends = "echo2">
+  <echo>
+  Creating dir  </echo>
+  <mkdir dir = "build/classes"/>
+  </target>
+  
+  <!-- <target name = "all" description = "my first buid" depends = "create dir">
+  <echo> Compile </echo>
+  <javac destdir ="build/classes"/ includeantruntime="false" classpath = "lib/Dota2.jar"/> ><src path="src"/><javac>
+  </target>
+  -->
+  
+  <target name = "all" description = "my first buid" depends = "create dir">
+  <echo> Compile </echo>
+  <javac destdir ="build/classes"/ includeantruntime="false"  classpathhref = "classpath"><src path = "src"/> </javac>
+  </target>
+  
+  <target name = "all" description = "create JAR" depends = "Compile">
+ <jar destfile = "build/GUI.jar" > 
+ <manifest> <attribute name = "Main-class" value = "l5.MainGUI" </manifest>
+ <zipgroupfileset dir = "lib" includes = "*.jar"/>
+ <fileset dir = "build/classes"> 
+ <include name = "**/*.class"/> 
+  </fileset>
+  </jar>
+  </target>
+  
+  
+</project>

@@ -1,0 +1,18 @@
+<Dota2>
+<dotahero>
+	<hero level="12">
+	Invoker
+	</hero>
+	<ultimate cooldown="50">
+	SunStrike
+	</ultimate>
+</dotahero>
+<dotahero>
+	<hero level="13"> 
+		Pudge
+	</hero>
+	<ultimate cooldown="12">
+		MeatHook
+	</ultimate>
+</dotahero>
+</Dota2>
